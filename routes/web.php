@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\testWebsocket;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    event(new testWebsocket);
     return view('welcome');
+});
+
+Route::get('websocket10', function(){
+    return view('websocket');
 });
